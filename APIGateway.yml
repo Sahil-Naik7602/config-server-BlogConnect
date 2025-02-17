@@ -1,0 +1,32 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: PostService
+          uri: lb://POSTSERVICE
+          predicates:
+            - Path= /api/v1/posts/**
+          filters:
+            - StripPrefix= 2
+            - name: AuthenticationFilter
+
+        - id: UserService
+          uri: lb://USERSERVICE
+          predicates:
+            - Path= /api/v1/users/**
+          filters:
+            - StripPrefix= 2
+
+
+        - id: ConnectionService
+          uri: lb://CONNECTIONSERVICE
+          predicates:
+            - Path= /api/v1/connections/**
+          filters:
+            - StripPrefix= 2
+            - name: AuthenticationFilter
+
+
+server.port: 9000
+
+jwt.secretKey : asdfladf98a7df89aysf8d9yasiudfha9s87dfa89syudhfa98sdfyaisuhdfa98s
