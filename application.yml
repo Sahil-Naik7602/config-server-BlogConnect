@@ -1,6 +1,6 @@
 #Discovery servuce configuration
-#eureka.client.service-url.defaultZone: http://${DISCOVERY_SERVICE_ADD_NAME:localhost}:8761/eureka
-eureka.client.service-url.defaultZone: http://discovery-server:8761/eureka
+eureka.client.service-url.defaultZone: http://${DISCOVERY_SERVICE_ADD_NAME:localhost}:8761/eureka
+#eureka.client.service-url.defaultZone: http://discovery-server:8761/eureka
 
 
 spring:
