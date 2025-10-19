@@ -8,6 +8,7 @@ spring:
   datasource:
     username: postgres
     password: password
+    url: jdbc:postgresql://${DBBC_ADD_NAME:localhost}:5432/bc_database
   jpa:
     hibernate:
       ddl-auto: update
